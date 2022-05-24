@@ -1,1 +1,144 @@
-html file
+<style>
+.icon-list li::before {
+    display: block;
+    flex-shrink: 0;
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: .5rem;
+    content: "";
+    /* background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23212529' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z'/%3E%3C/svg%3E") no-repeat center center / 100% auto; */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(2 122 197)' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z'/%3E%3C/svg%3E") no-repeat center center / 100% auto;
+  }
+
+  .ps-0{
+      text-align: left;
+  }
+  #mainNav {
+    min-height: 3.5rem;
+    background-color: #fff;
+  }
+  #mainNav .navbar-toggler {
+    font-size: 80%;
+    padding: 0.75rem;
+    color: #64a19d;
+    border: 1px solid #64a19d;
+  }
+  #mainNav .navbar-toggler:focus {
+    outline: none;
+  }
+  #mainNav .navbar-brand {
+    color: #000000;
+    font-weight: 700;
+    padding: 0.9rem 0;
+  }
+  #mainNav .navbar-nav .nav-item:hover {
+    color: fade(#fff, 80%);
+    outline: none;
+    background-color: transparent;
+  }
+  #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+    outline: none;
+    background-color: transparent;
+  }
+  @media (min-width: 992px) {
+    #mainNav {
+      padding-top: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+      background-color: transparent;
+      transition: background-color 0.3s ease-in-out;
+    }
+    #mainNav .navbar-brand {
+      padding: 0.5rem 0;
+      /* color: rgba(255, 255, 255, 0.5); */
+      color: black;
+    }
+    #mainNav .nav-link {
+      transition: none;
+      padding: 2rem 1.5rem;
+      color: rgba(255, 255, 255, 0.5);
+      color: black;
+    }
+    #mainNav .nav-link:hover {
+      color: rgba(255, 255, 255, 0.75);
+      color: black;
+    }
+    #mainNav .nav-link:active {
+      color: #fff;
+      color: black;
+    }
+    #mainNav.navbar-shrink {
+      background-color: #fff;
+      color: black;
+    }
+    #mainNav.navbar-shrink .navbar-brand {
+      color: #000000;
+    }
+    #mainNav.navbar-shrink .nav-link {
+      color: #000000;
+      padding: 1.5rem 1.5rem 1.25rem;
+      border-bottom: 0.25rem solid transparent;
+    }
+    #mainNav.navbar-shrink .nav-link:hover {
+      color: #64a19d;
+      color: black;
+    }
+    #mainNav.navbar-shrink .nav-link:active {
+      color: #467370;
+      color: black;
+    }
+    #mainNav.navbar-shrink .nav-link.active {
+      color: #64a19d;
+      color: black;
+      outline: none;
+      border-bottom: 0.25rem solid #64a19d;
+    }
+  }
+  
+
+  .tag-line{
+    font-size: 0.8rem;
+  }    
+</style>
+
+    <header class="d-flex flex-wrap justify-content-center">
+        <span class="fs-1">Mobile Notary</span>
+    </header>
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="container my-5">
+                    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+                      <div class="col-lg-12 p-3 p-lg-5 pt-lg-3">
+                        <h3 class="fw-bold lh-1">Why Digital Notary?</h3>
+                        <p class="lead tag-line">Digital Notary is more secure than using a traditional notary, Online notarization includes sophisticated identity verification, auditable records, and the most stringent level of document security.</p>
+                        <p class="lead tag-line">Online notarization speeds up, simplifies, and reduces the costs of document signing……….5 to 10 Minutes is all it takes to notarize vs. entire day or even months!  Time is precious, once lost is gone for ever………………………………………….</p>
+                      </div>
+                    </div>
+                  </div>                    
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="d1-none container px-4" id="icon-grid">
+            <h5 class="pb-2 border-bottom mt-4 fw-bold" style="text-align: left;">About</h5>
+            
+            <ul class="icon-list ps-0">
+                <li class="d-flex align-items-start mb-1 py-2" *ngFor="let hero of data" ><div><span class="fw-bold">{{hero.title}}</span>: {{hero.desc}}</div></li>
+            </ul>
+            
+
+            
+          </div>
+    </header>                
+
+
+            </div>
+            <!-- <img class="img-fluid" src="assets/img/ipad.png" alt="" /> -->
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer bg-white small text-center text-black-50">
+        <div class="container">Copyright © Mobile Notary</div>
+    </footer>
+
