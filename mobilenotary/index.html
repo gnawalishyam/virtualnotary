@@ -1,3 +1,8 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
 <style>
 .icon-list li::before {
     display: block;
@@ -100,6 +105,7 @@
     font-size: 0.8rem;
   }    
 </style>
+
     <header class="d-flex flex-wrap justify-content-center">
         <span class="fs-1">Mobile Notary</span>
     </header>
@@ -121,8 +127,8 @@
         <div class="d1-none container px-4" id="icon-grid">
             <h5 class="pb-2 border-bottom mt-4 fw-bold" style="text-align: left;">About</h5>
             
-            <ul class="icon-list ps-0">
-                <li class="d-flex align-items-start mb-1 py-2" *ngFor="let hero of data" ><div><span class="fw-bold">{{hero.title}}</span>: {{hero.desc}}</div></li>
+            <ul class="icon-list ps-0" id="items_list">
+                <!-- <li class="d-flex align-items-start mb-1 py-2" *ngFor="let hero of data" ><div><span class="fw-bold">{{hero.title}}</span>: {{hero.desc}}</div></li> -->
             </ul>
             
 
@@ -141,3 +147,19 @@
         <div class="container">Copyright © Mobile Notary</div>
     </footer>
 
+
+    <script>
+        let data =  [ {"title":`Online notary public`,"desc":`An online notary is a traditional notary who has applied for and received an online notary commission issued by the Government of India/ State Government authorizing the performance of an online notarization. An online notary may perform all the notarial acts of a traditional notary. At the time of the online notarization, the online notary must be physically in the administrative state of notarization and authorized by the respective government to function their duties in the respective states.`},
+          {"title":`Principal (the document’s signer)`,"desc":`Unlike in a traditional notarization, the signer (“principal”) in an online notarization does not need to physically appear before the notary. Instead, the principal in an online notarization is deemed to appear by means of a two-way audio-video conference that complies with the rules set forth by the Government of India/ state Government. This means that principal does not need be in the state of residence at the time of an online notarization.`},
+          {"title":`Easy two-step identity verification`,"desc":`The notary must verify the identity of the principal using the identity proofing and credential analysis standards set forth in the Indian Government Administrative Code. Identity proofing is performed through third party dynamic knowledge-based authentication questions. Credential analysis is performed on the signer’s remotely presented picture ID using automated third party software processes that confirm the credential’s integrity and personal details.`},
+          {"title":`Online notary session`,"desc":`The principal and online notary engage via a two-way videoconference session with an interactive electronic version of the document that is digitally signed by the parties. The online notary system is designed to confirm that the document that is presented for online notarization is the same document that is electronically signed by the principal. The session is digitally recorded and secured so that only the authorized participants can obtain access.`},
+          {"title":`Signed document is digitally sealed`,"desc":`The certificate used in an online notarization must expressly state that the notarial act was an online notarization. The online notary public signs the certificate by affixing a personal digital certificate and its electronic seal. This process must be completed in a manner that is capable of independent verification and renders any subsequent change or modification to the electronic document evident. The digital certificate uses public key infrastructure technology and is fully compliant to the approved authority.`}]
+
+          var items = document.getElementById('items_list')
+          data.forEach(element => {
+            const item = document.createElement("li");
+            item.className = ["d-flex align-items-start mb-1 py-2"]
+            item.innerHTML = `<div><span class="fw-bold">`+element.title+`</span>: `+element.desc+`</div>`
+            items.appendChild(item)
+          });
+    </script>
